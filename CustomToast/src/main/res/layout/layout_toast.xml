@@ -1,77 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     android:orientation="vertical">
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/transparent"
-        android:orientation="vertical"
-        android:padding="@dimen/dim_16">
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dim_16"
+        app:cardCornerRadius="@dimen/dim_8"
+        app:cardElevation="0dp">
 
-        <androidx.cardview.widget.CardView
+        <LinearLayout
+            android:id="@+id/whole_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardElevation="0dp"
-            app:cardCornerRadius="@dimen/dim_8">
+            android:background="@color/error"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/dim_12"
+            android:paddingBottom="@dimen/dim_12">
+
+            <ImageView
+                android:id="@+id/toastImg"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="@dimen/dim_16"
+                app:srcCompat="@drawable/ic_success"
+                tools:ignore="ContentDescription" />
 
             <LinearLayout
-                android:id="@+id/whole_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#FF5686D8"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp">
+                android:layout_marginLeft="@dimen/dim_16"
+                android:layout_marginRight="@dimen/dim_16"
+                android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/toastImg"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginRight="10dp"
-                    app:srcCompat="@drawable/ic_success" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/toastTitle"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:layout_marginBottom="@dimen/dim_4"
+                    android:fontFamily="sans-serif-medium"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    tools:text="Success" />
 
-                    <TextView
-                        android:id="@+id/toastTitle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="bottom"
-                        android:fontFamily="sans-serif-medium"
-                        android:paddingLeft="10dp"
-                        android:paddingTop="10dp"
-                        android:text="Success"
-                        android:textColor="@color/white"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/toastDesc"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:fontFamily="sans-serif-medium"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:paddingBottom="10dp"
-                        android:text="The image has been uploaded to server."
-                        android:textColor="@color/white"
-                        android:textSize="12sp"
-                        android:textStyle="normal" />
-                </LinearLayout>
+                <TextView
+                    android:id="@+id/toastDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="sans-serif-medium"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="normal"
+                    tools:text="The image has been uploaded to server.The image has been uploaded to server." />
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-    </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 </LinearLayout>
