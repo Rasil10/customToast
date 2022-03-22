@@ -1,6 +1,25 @@
 # CustomToast
 Library to show simple, lightweight, beautiful and Editable Toast for your Android project
 
+# How To Import
+
+Step 1. Add the JitPack repository to your build file
+
+Add it in your root build.gradle at the end of repositories:
+
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+ 
+ Step 2. Add the dependency
+
+	dependencies {
+	        implementation 'com.github.Rasil10:customToast:Tag'
+	}
+
 # Usages
 val customToast = CustomToast(context)
 
