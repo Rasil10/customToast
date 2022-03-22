@@ -13,21 +13,20 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         customToast = CustomToast(this)
-        customToast.hideHeader = true
+        customToast.hideHeader = false
         customToast.hideIcon = false
         customToast.gravity = Gravity.CENTER
 
-        customToast.showSuccessToast(
-            "This it Success Toast message. This it Success Toast message. This it Success Toast message. This it Success Toast message. This it Success Toast message. This it Success Toast message. This it Success Toast message. This it Success Toast message. This it Success Toast message. This it Success Toast message. This it Success Toast message. This it Success Toast message. "
-        )
-        customToast.showErrorToast(
-            "This it Error Toast message"
-        )
+//        customToast.showSuccessToast(
+//            "This it Success Toast message. This it Success Toast message. This it Success Toast message. This it Success Toast message. This it Success Toast message. This it Success Toast message. This it Success Toast message. This it Success Toast message. This it Success Toast message. This it Success Toast message. This it Success Toast message. This it Success Toast message. "
+//        )
         customToast.showInfoToast(
-            "This it Informative Toast message"
+            "This it Error Toast message",
+            ContextCompat.getColor(this,R.color.purple_500)
         )
-        customToast.showCustomColorToast(
-            "This it Custom COlor Toast message", ContextCompat.getColor(this, R.color.purple_200)
-        )
+//        customToast.showInfoToast(
+//            "This it Informative Toast message"
+//        )
+
     }
 }

@@ -30,8 +30,35 @@ class CustomToast(var context: Context) {
         )
     }
 
+    fun showSuccessToast(message: String?, backgroundColor: Int) {
+        this.backgroundColor = backgroundColor
+        CustomToastHelper(
+            context,
+            "success",
+            backgroundColor!!,
+            gravity,
+            hideIcon,
+            hideHeader
+        ).showToast(
+            message
+        )
+    }
+
     fun showInfoToast(message: String?) {
         backgroundColor = ContextCompat.getColor(context, R.color.info)
+
+        CustomToastHelper(
+            context,
+            "info",
+            backgroundColor!!,
+            gravity,
+            hideIcon,
+            hideHeader
+        ).showToast(message)
+    }
+
+    fun showInfoToast(message: String?, backgroundColor: Int) {
+        this.backgroundColor = backgroundColor
 
         CustomToastHelper(
             context,
@@ -56,18 +83,19 @@ class CustomToast(var context: Context) {
         ).showToast(message)
     }
 
-    fun showCustomColorToast(message: String?, backgroundColor: Int) {
+    fun showErrorToast(message: String?, backgroundColor: Int) {
         this.backgroundColor = backgroundColor
 
         CustomToastHelper(
             context,
             "error",
-            backgroundColor,
+            backgroundColor!!,
             gravity,
             hideIcon,
             hideHeader
         ).showToast(message)
     }
+
 
     class CustomToastHelper(
         private val context: Context,
